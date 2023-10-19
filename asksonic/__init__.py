@@ -11,9 +11,10 @@ if getenv('FLASK_ENV') == 'development':
 
 route_prefix = getenv('ASKS_ROUTE_PREFIX', '/alexa')
 tracks_count = int(getenv('ASKS_TRACKS_COUNT', 50))
+path = getenv('ASKS_TEMPLATE', 'templates/en.yaml')
 
 app = Flask(__name__)
-ask = Ask(app, route_prefix, path='templates/en.yaml')
+ask = Ask(app, route_prefix, path)
 
 logger = app.logger
 
