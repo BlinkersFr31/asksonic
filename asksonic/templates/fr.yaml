@@ -1,0 +1,25 @@
+launch_text: "Bienvenue sur Jukebox. Demande moi de mettre un artiste, un album, ou une chanson. Tu peux aussi me demander de mettre une playlist ou de jouer la musique de la bibliothéque."
+launch_title: "Bienvenue sur Jukebox!"
+launch_content: "Demande moi de mettre un artiste, un album, ou une chanson. Tu peux aussi me demander de mettre une playlist ou de jouer la musique de la bibliothéque."
+
+pausing: "Pause"
+resuming: "Reprise"
+stopping: "Arrêt"
+okay: "Okay"
+
+playing_library: "Lecture de la musique de votre bibliothéque"
+playing_artist: "Lecture de musique par {{ artist }}"
+playing_album: "Lecture de l'album {{ album }} {{ 'par {}'.format(artist) if artist }}"
+
+current_track: "Le titre est "
+track_information: "{{ title }} par {{ artist }}"
+detailed_track_information: "{{ title }} par {{ artist }} de l'album {{ album }}"
+
+artist_albums: "J'ai trouvé ces albums par {{ artist }}: {{ album_titles }}"
+
+intent_not_supported: "Désolé, je ne peux pas faire ça demande à Julien de me l'apprendre"
+nothing_playing: "Il n'y a pas de musique en cours de lecture"
+no_previous_track: "Il n'y a pas de chanson précédente"
+end_of_queue: "Il n'y a plus de musique dans la liste de lecture"
+artist_not_found: "Je ne trouve pas l'artiste {{ artist }}"
+album_not_found: "Je ne trouve pas l'album {{ album }} {{ 'par {}'.format(artist) if artist }}"
