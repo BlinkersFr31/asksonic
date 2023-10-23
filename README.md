@@ -65,6 +65,8 @@ If you instead prefer to host the AskSonic server yourself, you can follow these
 | ``ASKS_TRACKS_COUNT`` | The number of tracks enqueued at a time | Default: 50 |
 | ``ASKS_EXTRA_SECRET`` | An extra secret that will be appended to all requests as either a header or to the query string. Useful for authenticating requests if your Subsonic server is behind a WAF such as Cloudflare | ❌ |
 | ``ASKS_TEMPLATE`` | The answers template to use | Default: templates/en.yaml |
+| ``ASKS_LIDARR_URL`` | The base URL of your Lidarr server. Must be https. Example: `https://subdomain.example.com` | ❌ |
+| ``ASKS_LIDARR_APIKEY`` | Your Lidarr API Key | ❌ |
 
 ## Acknowledgements
 AskSonic was inspired by the following projects:
