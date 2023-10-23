@@ -4,17 +4,32 @@
 #from urllib.request import Request
 #from random import shuffle
 #from .track import Track
+from pyarr import LidarrAPI
 
 
-class Lidarr():
+class Lidarr(LidarrAPI):
     def __init__(
-        self#,
-        #baseUrl: str, username: str, password: str, port: int,
-        #serverPath: str, apiVersion: str, appName: str,
-        #extra_secret: Optional[str] = None
+        self,
+        host_url: str,
+        api_key: str
     ) -> None:
         super().__init__(
-            #baseUrl=baseUrl, username=username, password=password, port=port,
-            #serverPath=serverPath, appName=appName, apiVersion=apiVersion
+            host_url=host_url,
+            api_key=api_key
         )
-        #self._extra_secret = extra_secret
+
+    def artist_add_to_collection(self, artistStr: str) -> bool:
+        artists = self.lookup_artist(artistStr)
+        if not artists:
+            return false
+        
+        folders = self.get_root_folder()
+        if not folders:
+            return false
+        
+        for artist in artists:
+            #TODO
+            self.add_artist(artist, root_dir: str, quality_profile_id: int | None = None, metadata_profile_id: int | None = None, monitored: bool = True, artist_monitor: Literal['all', 'future', 'missing', 'existing', 'first', 'latest'] = 'all', artist_search_for_missing_albums: bool = False)
+
+        
+        return true
