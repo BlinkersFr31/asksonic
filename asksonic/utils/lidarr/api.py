@@ -1,12 +1,12 @@
-from typing import Optional
-from urllib.parse import quote_plus
-from libsonic import Connection
-from urllib.request import Request
-from random import shuffle
-from .track import Track
+#from typing import Optional
+#from urllib.parse import quote_plus
+#from libsonic import Connection
+#from urllib.request import Request
+#from random import shuffle
+#from .track import Track
 
 
-class Lidarr(Connection):
+class Lidarr():
     def __init__(
         self#,
         #baseUrl: str, username: str, password: str, port: int,
