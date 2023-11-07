@@ -16,6 +16,7 @@ track_information: "{{ title }} by {{ artist }}"
 detailed_track_information: "{{ title }} by {{ artist }} from the album {{ album }}"
 
 artist_albums: "I found these albums by {{ artist }}: {{ album_titles }}"
+artist_found_add: "I found this artist {{ artist }}, I will try to add his albums"
 
 intent_not_supported: "Sorry, I can't do that yet"
 nothing_playing: "There is no music playing"
