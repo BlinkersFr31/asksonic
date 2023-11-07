@@ -16,6 +16,7 @@ track_information: "{{ title }} par {{ artist }}"
 detailed_track_information: "{{ title }} par {{ artist }} de l'album {{ album }}"
 
 artist_albums: "J'ai trouvé ces albums par {{ artist }}: {{ album_titles }}"
+artist_found_add: "J'ai trouvé l'artiste {{ artist }}, je vais essayer d'ajouter ses albums"
 
 intent_not_supported: "Désolé, je ne peux pas faire ça demande à Julien de me l'apprendre"
 nothing_playing: "Il n'y a pas de musique en cours de lecture"
