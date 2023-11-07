@@ -105,6 +105,21 @@
                     ]
                 },
                 {
+                    "name": "AskSonicAddArtistIntent",
+                    "slots": [
+                        {
+                            "name": "artist",
+                            "type": "AMAZON.MusicGroup",
+                            "samples": [
+                                "{artist}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "ajoute l'artiste {artist}"
+                    ]
+                },
+                {
                     "name": "AskSonicListArtistAlbumsIntent",
                     "slots": [
                         {
