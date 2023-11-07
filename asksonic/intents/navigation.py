@@ -66,8 +66,8 @@ def list_artist_albums(artist: str) -> Union[audio, statement]:
         album_titles = ', '.join([a['name'] for a in albums])
         return statement(
             render_template(
-                'artist_albums',
-                artist=artist, album_titles=album_titles
+                'artist_found_add',
+                artist=artist
             )
         )
     return statement(
