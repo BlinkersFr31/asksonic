@@ -1,0 +1,10 @@
+---
+version: "2.1"
+services:
+  asksonic:
+    build: https://github.com/BlinkersFr31/asksonic.git
+    container_name: asksonicBlinkersFr31
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '4545:4545'
+    restart: unless-stopped
