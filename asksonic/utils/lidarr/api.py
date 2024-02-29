@@ -39,7 +39,7 @@ class Lidarr(LidarrAPI):
             if artist['artistName'] == artistStr:
                 try:
                     log('avant add')
-                    self.add_artist(artist=artist, root_dir=folder[0]['id'], artist_search_for_missing_albums=True)
+                    self.add_artist(artist=artist, root_dir=folder[0]['path'], artist_search_for_missing_albums=True)
                     log('apres add')
                 except PyarrMissingProfile as exception:
                     log(exception)
