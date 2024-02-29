@@ -42,3 +42,6 @@ class Lidarr(LidarrAPI):
                 return false
         
         return true
+
+def log(msg: str) -> None:
+    logger.debug(msg)
