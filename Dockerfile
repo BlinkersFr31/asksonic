@@ -1,7 +1,7 @@
 FROM python:3.9-slim-buster AS builder
 RUN apt update && apt install git gcc libssl-dev -y
 WORKDIR /asksonic
-RUN git clone https://github.com/srichter/asksonic.git
+RUN git clone https://github.com/BlinkersFr31/asksonic.git
 RUN pip install --user wheel setuptools honcho
 RUN pip install --user -r asksonic/requirements.txt
 
