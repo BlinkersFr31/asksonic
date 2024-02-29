@@ -24,18 +24,18 @@ class Lidarr(LidarrAPI):
         if not artists:
             return false
         else:
-            logger.debug(artists['name')
+            logger.debug(artists['name'])
         
         folder = self.get_root_folder()
         if not folder:
             return false
         else:
-            logger.debug(folder['name')
+            logger.debug(folder['name'])
         
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
             try:
-                self.add_artist(artist: artist, root_dir: folder['name'), artist_search_for_missing_albums: bool = True)
+                self.add_artist(artist: artist, root_dir: folder['name'], artist_search_for_missing_albums: bool = True)
             except PyarrMissingProfile as exception:
                 logger.error(exception)
                 return false
