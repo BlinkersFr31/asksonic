@@ -4,6 +4,7 @@
 #from urllib.request import Request
 #from random import shuffle
 #from .track import Track
+from asksonic import logger
 from pyarr import LidarrAPI
 
 
@@ -19,25 +20,25 @@ class Lidarr(LidarrAPI):
         )
 
     def artist_add_to_collection(self, artistStr: str) -> bool:
-        debug('artist_add_to_collection')
+        log('artist_add_to_collection')
         artists = self.lookup_artist(artistStr)
         if not artists:
             return false
         else:
-            debug(artists['name'])
+            log(artists['name'])
         
         folder = self.get_root_folder()
         if not folder:
             return false
         else:
-            debug(folder['name'])
+            log(folder['name'])
         
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
             try:
                 self.add_artist(artist=artist, root_dir=folder['name'], artist_search_for_missing_albums=True)
             except PyarrMissingProfile as exception:
-                error(exception)
+                log(exception)
                 return false
         
         return true
