@@ -14,7 +14,7 @@ tracks_count = int(getenv('ASKS_TRACKS_COUNT', 50))
 
 app = Flask(__name__)
 template_path = f"templates/{getenv('ASK_LANGUAGE', 'en')}.yaml"
-logging.getLogger(__name__).log('template_path: ' + template_path)
+logging.getLogger(__name__).debug('template_path: ' + template_path)
 
 ask = Ask(app, route_prefix, path=template_path)
 
