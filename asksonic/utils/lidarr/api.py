@@ -19,25 +19,25 @@ class Lidarr(LidarrAPI):
         )
 
     def artist_add_to_collection(self, artistStr: str) -> bool:
-        logger.debug('artist_add_to_collection')
+        debug('artist_add_to_collection')
         artists = self.lookup_artist(artistStr)
         if not artists:
             return false
         else:
-            logger.debug(artists['name'])
+            debug(artists['name'])
         
         folder = self.get_root_folder()
         if not folder:
             return false
         else:
-            logger.debug(folder['name'])
+            debug(folder['name'])
         
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
             try:
                 self.add_artist(artist=artist, root_dir=folder['name'], artist_search_for_missing_albums=True)
             except PyarrMissingProfile as exception:
-                logger.error(exception)
+                error(exception)
                 return false
         
         return true
