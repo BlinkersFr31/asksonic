@@ -31,15 +31,16 @@ class Lidarr(LidarrAPI):
         if not folder:
             return false
         else:
-            log(folder['name'])
+            log(folder[0]['name'])
         
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
-            try:
-                self.add_artist(artist=artist, root_dir=folder['name'], artist_search_for_missing_albums=True)
-            except PyarrMissingProfile as exception:
-                log(exception)
-                return false
+            if artist['artistName'] == artistStr:
+                try:
+                    self.add_artist(artist=artist, root_dir=folder[0]['name'], artist_search_for_missing_albums=True)
+                except PyarrMissingProfile as exception:
+                    log(exception)
+                    return false
         
         return true
 
