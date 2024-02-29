@@ -30,7 +30,7 @@ class Lidarr(LidarrAPI):
         if not folder:
             return false
         else:
-            logger.debug(folder['name'))
+            logger.debug(folder['name')
         
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
