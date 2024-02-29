@@ -42,7 +42,7 @@ class Lidarr(LidarrAPI):
                     log(exception)
                     return false
         
-        return true
+        return True
 
 def log(msg: str) -> None:
     logger.debug(msg)
