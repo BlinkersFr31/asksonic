@@ -38,11 +38,10 @@ def play_artist(artist: str) -> Union[audio, statement]:
             track,
             render_template('playing_artist', artist=track.artist)
         )
-    else :
-        if lidarr.artist_add_to_collection(artist) :
-            return statement(
-                render_template('artist_not_found', artist=artist)
-            )
+    if lidarr.artist_add_to_collection(artist) :
+        return statement(
+            render_template('artist_not_found', artist=artist)
+        )
     return statement(render_template('artist_not_found', artist=artist))
 
 
