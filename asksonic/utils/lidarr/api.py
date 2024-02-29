@@ -25,7 +25,7 @@ class Lidarr(LidarrAPI):
         if not artists:
             return false
         else:
-            log(artists['name'])
+            log(artists)
         
         folder = self.get_root_folder()
         if not folder:
