@@ -38,7 +38,9 @@ class Lidarr(LidarrAPI):
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
             if artist['artistName'] == artistStr:
                 try:
+                    log('avant add')
                     self.add_artist(artist=artist, root_dir=folder[0]['name'], artist_search_for_missing_albums=True)
+                    log('apres add')
                 except PyarrMissingProfile as exception:
                     log(exception)
                     return False
