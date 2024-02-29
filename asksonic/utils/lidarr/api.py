@@ -23,13 +23,13 @@ class Lidarr(LidarrAPI):
         artists = self.lookup_artist(artistStr)
         if not artists:
             return false
-        else
+        else:
             logger.debug(artists['name'))
         
         folder = self.get_root_folder()
         if not folder:
             return false
-        else
+        else:
             logger.debug(folder['name'))
         
         for artist in artists:
