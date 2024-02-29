@@ -5,6 +5,7 @@ from flask.templating import render_template
 from flask_ask import question, audio
 from asksonic import ask, logger, tracks_count
 from asksonic.utils.subsonic import subsonic
+from asksonic.utils.lidarr import lidarr
 from . import queue
 
 
@@ -37,6 +38,11 @@ def play_artist(artist: str) -> Union[audio, statement]:
             track,
             render_template('playing_artist', artist=track.artist)
         )
+    else :
+        if lidarr.artist_add_to_collection(artist) :
+            return statement(
+                render_template('artist_not_found', artist=artist)
+            )
     return statement(render_template('artist_not_found', artist=artist))
 
 
