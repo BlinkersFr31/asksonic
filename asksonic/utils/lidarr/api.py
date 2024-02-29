@@ -21,6 +21,7 @@ class Lidarr(LidarrAPI):
 
     def artist_add_to_collection(self, artistStr: str) -> bool:
         log('artist_add_to_collection')
+        log(artistStr)
         artists = self.lookup_artist(artistStr)
         if not artists:
             return False
