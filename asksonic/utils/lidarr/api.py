@@ -35,7 +35,7 @@ class Lidarr(LidarrAPI):
         for artist in artists:
             #TODO https://docs.totaldebug.uk/pyarr/modules/lidarr.html
             try:
-                self.add_artist(artist: artist, root_dir: folder['name'], artist_search_for_missing_albums: bool = True)
+                self.add_artist(artist=artist, root_dir=folder['name'], artist_search_for_missing_albums=True)
             except PyarrMissingProfile as exception:
                 logger.error(exception)
                 return false
