@@ -23,13 +23,13 @@ class Lidarr(LidarrAPI):
         log('artist_add_to_collection')
         artists = self.lookup_artist(artistStr)
         if not artists:
-            return false
+            return False
         else:
             log(artists)
         
         folder = self.get_root_folder()
         if not folder:
-            return false
+            return False
         else:
             log(folder[0]['name'])
         
@@ -40,7 +40,7 @@ class Lidarr(LidarrAPI):
                     self.add_artist(artist=artist, root_dir=folder[0]['name'], artist_search_for_missing_albums=True)
                 except PyarrMissingProfile as exception:
                     log(exception)
-                    return false
+                    return False
         
         return True
 
